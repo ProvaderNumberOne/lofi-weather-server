@@ -4,10 +4,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const DB_FILE = __dirname + "/db.json";
 
-app.use(cors({ origin: "*" })); // разрешаем все домены
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 // --- работа с базой ---
